@@ -15,3 +15,8 @@ Pick one host:
 4. Verify audit log entries for a test user.
 5. Flip DryRun=false; leave SendEmployeeEmails=false until template is approved.
 6. Enable SendEmployeeEmails=true.
+
+
+## Promotion
+DryRun=true verify audit log, then DryRun=false. Ensure OverlapMinutes=5, RetentionDays=90, single watcher only (mutex skips parallel runs).
+

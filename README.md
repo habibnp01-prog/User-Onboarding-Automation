@@ -17,3 +17,7 @@ Automated Microsoft 365 user creation alerts and welcome notifications.
     .\scripts\Start-UserNotificationWatcher.ps1 -ConfigPath .\src\Config\config.json
 
 See docs\DEPLOYMENT.md for production options.
+
+See docs\TROUBLESHOOTING.md for subject-line, duplicate-UPN, and TAP accessDenied fixes.
+Cycle uses watermark+overlap (default 5m), single-instance mutex, retention prune, and returns processed/adminOK/welcomeOK/deferred/failed/pruned summary.
+

@@ -11,3 +11,10 @@ Application permissions (admin consent required):
 | UserAuthenticationMethod.Read.All | Verify MFA registration state (optional) |
 
 Managed identity: enable system-assigned identity on the host, then grant the same app roles.
+
+
+## TAP
+- Graph: UserAuthenticationMethod.ReadWrite.All
+- Entra role: Authentication Administrator (non-admin targets) or Privileged Authentication Administrator (admin targets)
+- Policy: Authentication methods > Temporary Access Pass = Enabled. After role grant: Disconnect-MgGraph + reconnect.
+
