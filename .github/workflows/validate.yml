@@ -1,0 +1,16 @@
+﻿name: validate
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - shell: pwsh
+        run: |
+          Install-Module Pester -Force -Scope CurrentUser -MinimumVersion 5.5.0
+          Install-Module Microsoft.Graph -Force -Scope CurrentUser
+          Invoke-Pester -Path ./tests -CI
+      - shell: pwsh
+        run: |
+          Install-Module PSScriptAnalyzer -Force -Scope CurrentUser
+          Invoke-ScriptAnalyzer -Path ./src -Severity Error,Warning -EnableExit

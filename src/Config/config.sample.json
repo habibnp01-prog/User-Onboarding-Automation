@@ -1,0 +1,27 @@
+﻿{
+  "TenantId": "<tenant-guid>",
+  "ClientId": "<app-guid>",
+  "AuthMode": "Certificate",
+  "CertificateThumbprint": "<thumbprint>",
+  "CertificateStore": "CurrentUser",
+  "AdminRecipients": ["it-ops@contoso.com"],
+  "OrganizationName": "Contoso",
+  "ITSupportEmail": "support@contoso.com",
+  "FromMailbox": "no-reply@contoso.com",
+  "Onboarding": {
+    "RequireLicense": true,
+    "RequiredLicenseSkuPartNumber": "ENTERPRISEPACK",
+    "RequireMailbox": true,
+    "MailboxWaitSeconds": 600,
+    "AllowedUserTypes": ["Member"],
+    "DepartmentAllowList": [],
+    "SkipHybridSyncedUsers": true
+  },
+  "Retry": { "MaxAttempts": 5, "InitialDelaySeconds": 15, "MaxDelaySeconds": 300 },
+  "Monitoring": { "Mode": "Polling", "PollIntervalSeconds": 300, "LookbackMinutes": 15, "OverlapMinutes": 5 },
+  "Audit": { "LogPath": "./logs/audit.jsonl", "RetentionDays": 90 },
+  "DryRun": true,
+  "SendEmployeeEmails": false,
+  "WelcomeTemplatePath": "./templates/welcome-email.html",
+  "AdminTemplatePath": "./templates/admin-notification.html"
+}

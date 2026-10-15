@@ -1,0 +1,11 @@
+﻿{
+  "id": "00000000-0000-0000-0000-000000000001",
+  "displayName": "Jane Doe",
+  "userPrincipalName": "jane.doe@contoso.com",
+  "mail": "jane.doe@contoso.com",
+  "department": "IT",
+  "jobTitle": "Engineer",
+  "createdDateTime": "2026-01-01T12:00:00Z",
+  "userType": "Member",
+  "onPremisesSyncEnabled": null
+}

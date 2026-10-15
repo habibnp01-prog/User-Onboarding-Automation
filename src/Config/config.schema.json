@@ -1,0 +1,62 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User-Onboarding-Automation config",
+  "type": "object",
+  "required": ["AuthMode", "AdminRecipients", "OrganizationName", "FromMailbox"],
+  "properties": {
+    "TenantId":  { "type": "string" },
+    "ClientId":  { "type": "string" },
+    "AuthMode":  { "enum": ["Certificate", "ManagedIdentity", "Interactive"] },
+    "CertificateThumbprint": { "type": "string" },
+    "CertificateStore": { "enum": ["CurrentUser", "LocalMachine"] },
+    "Scopes": { "type": "array", "items": { "type": "string" } },
+    "LoginUrl": { "type": "string" },
+    "AdminRecipients": { "type": "array", "items": { "type": "string", "format": "email" } },
+    "OrganizationName": { "type": "string", "minLength": 1 },
+    "ITSupportEmail":   { "type": "string", "format": "email" },
+    "FromMailbox":      { "type": "string", "format": "email" },
+    "Onboarding": {
+      "type": "object",
+      "properties": {
+        "RequireLicense": { "type": "boolean" },
+        "RequireMailbox": { "type": "boolean" },
+        "MailboxWaitSeconds": { "type": "integer", "minimum": 0 },
+        "AllowedUserTypes": { "type": "array", "items": { "type": "string" } },
+        "DepartmentAllowList": { "type": "array", "items": { "type": "string" } },
+        "SkipHybridSyncedUsers": { "type": "boolean" }
+      }
+    },
+    "Retry": {
+      "type": "object",
+      "required": ["MaxAttempts", "InitialDelaySeconds", "MaxDelaySeconds"],
+      "properties": {
+        "MaxAttempts": { "type": "integer", "minimum": 1 },
+        "InitialDelaySeconds": { "type": "integer", "minimum": 0 },
+        "MaxDelaySeconds": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "Monitoring": {
+      "type": "object",
+      "required": ["Mode", "PollIntervalSeconds", "LookbackMinutes"],
+      "properties": {
+        "Mode": { "enum": ["Polling"] },
+        "PollIntervalSeconds": { "type": "integer", "minimum": 1 },
+        "LookbackMinutes": { "type": "integer", "minimum": 1 },
+        "OverlapMinutes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "Audit": {
+      "type": "object",
+      "required": ["LogPath"],
+      "properties": {
+        "LogPath": { "type": "string", "minLength": 1 },
+        "RetentionDays": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "DryRun":             { "type": "boolean" },
+    "SendEmployeeEmails": { "type": "boolean" },
+    "WelcomeTemplatePath":{ "type": "string" },
+    "AdminTemplatePath":  { "type": "string" },
+    "CredentialsTemplatePath": { "type": "string" }
+  }
+}

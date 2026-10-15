@@ -1,0 +1,6 @@
+﻿{
+  "error": {
+    "code": "ErrorSendAsDenied",
+    "message": "The user does not have permission to send as the mailbox."
+  }
+}

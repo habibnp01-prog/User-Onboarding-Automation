@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<body style="font-family:Segoe UI,Arial,sans-serif;color:#222;font-size:14px;line-height:1.5">
+  <h2 style="color:#0a3d62">Welcome to {{Org}}, {{DisplayName}}!</h2>
+  <p>Your Microsoft 365 account is ready.</p>
+
+  <h3 style="color:#0a3d62">Your details</h3>
+  <table cellpadding="6" cellspacing="0" style="border-collapse:collapse">
+    <tr><td><b>Full name</b></td><td>{{DisplayName}}</td></tr>
+    <tr><td><b>Username</b></td><td>{{UPN}}</td></tr>
+    <tr><td><b>Work email</b></td><td><a href="mailto:{{Mail}}">{{Mail}}</a></td></tr>
+    <tr><td><b>Department</b></td><td>{{Department}}</td></tr>
+    <tr><td><b>Job title</b></td><td>{{JobTitle}}</td></tr>
+    <tr><td><b>Phone</b></td><td>{{Phone}}</td></tr>
+    <tr><td><b>Office</b></td><td>{{Office}}</td></tr>
+    <tr><td><b>Employee ID</b></td><td>{{EmployeeId}}</td></tr>
+    <tr><td><b>Manager</b></td><td>{{Manager}}</td></tr>
+  </table>
+
+  <h3 style="color:#0a3d62">First steps</h3>
+  <ol>
+    <li>Sign in at <a href="https://www.microsoft365.com/">https://www.microsoft365.com/</a></li>
+    <li>Set your password using the approved secure password-setup link (sent separately, never by email).</li>
+    <li>Register for multi-factor authentication when prompted.</li>
+    <li>Set up self-service password reset at <a href="https://aka.ms/sspr">https://aka.ms/sspr</a>.</li>
+  </ol>
+
+  <h3 style="color:#0a3d62">Need help?</h3>
+  <p>Contact IT support at <a href="mailto:{{Support}}">{{Support}}</a>.</p>
+
+  {{PasswordBlock}}
+
+  <p style="color:#666;font-size:12px">
+    We will never send passwords, tokens, or recovery codes by email unless expressly authorized.
+  </p>
+</body>
+</html>

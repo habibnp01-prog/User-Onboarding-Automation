@@ -1,0 +1,22 @@
+﻿# Local secrets
+src/Config/config.json
+*.pfx
+*.cer
+
+# Logs
+logs/
+*.jsonl
+
+# Backups
+*.psd1.bak
+*.ps1.bak
+
+
+# GUI-generated temporary password exports (if any)
+*.tmp.pw
+
+# Local user settings (if you later move env config out of config.json)
+.user-settings.json
+# Pester test artifacts
+TestDrive/
+*.testresults.xml
